@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+/*---------App--------------*/
+.app {
+  display: flex;
+  max-width: 70vw;
+  margin: 0 auto;
+}
+
+/*---------Navigation--------------*/
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+
+.navItem {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  min-width: 4rem;
+}
+
+.navItem:hover {
+  color: rgb(29, 140, 216);
+}
+
+.activeNavItem {
+  border-left: 4px solid rgb(29, 155, 240);
+  border-top: none;
+}
+.activeNavItem:hover {
+  color: white;
+}
+
+/*---------main--------------*/
+main {
+  margin: 0 auto;
+  max-width: 600px;
+  min-width: 30em;
+  background-color: black;
+  color: white;
+  border-left: 0.5px solid #657786;
+  border-right: 0.5px solid #657786;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+/*---------header--------------*/
+header {
+  padding: 0.75em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #657786;
+  position: sticky;
+  top: 0;
+  background-color: black;
+}
+
+.logo {
+  max-width: 3rem;
+}
+
+/*---------Tweet--------------*/
+
+.tweetsWrapper {
+  width: 100%;
+}
+
+.tweet {
+  padding: 1em;
+  margin-top: 0.5em;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    "p p a a a a . d d d d d"
+    "p p t t t t t t t t t t"
+    "p p t t t t t t t t t t";
+  border-bottom: 0.5px solid #657786;
+}
+
+.picture {
+  grid-area: p;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+.text {
+  grid-area: t;
+  padding: 0.5em;
+  font-weight: 300;
+}
+
+.author {
+  grid-area: a;
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+.date {
+  grid-area: d;
+  text-align: right;
+  font-size: 0.75em;
+}
+
+/*---------Trends--------------*/
+
+.trendsWrapper {
+  width: 100%;
+  padding: 1em;
+}
+/*---------Empty--------------*/
+.emptyWrapper {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.error {
+  color: red;
+}
+/*---------Loader--------------*/
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  border: 4px solid rgb(29, 155, 240);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(29, 155, 240) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*---------Responsive--------------*/
+
+@media (max-width: 426px) {
+  main {
+    padding-bottom: 3rem;
+    border-left: unset;
+    border-right: unset;
+    min-width: 20.5em;
+  }
+  .app {
+    max-width: unset;
+    margin: unset;
+  }
+  .navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 0.5px solid #657786;
+  }
+  .navItem {
+    min-width: unset;
+  }
+  .activeNavItem {
+    border-top: 4px solid rgb(29, 155, 240);
+    border-left: none;
+  }
+}
